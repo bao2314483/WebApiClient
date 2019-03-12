@@ -1,0 +1,13 @@
+stages:
+- name: test
+  steps:
+  - runScriptConfig:
+      image: gcc:latest
+      shellScript: "123"
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: "123"
+      pushRemote: true
+      registry: registry.cn-hangzhou.aliyuncs.com
+timeout: 60
